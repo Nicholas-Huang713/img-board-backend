@@ -14,10 +14,11 @@ router.post('/new', (req, res) => {
     });
     try {
         user.save();
+        res.json(user);
     } catch (e) {
         console.log("Error", e)
     }
-    res.json(user);
+    
 })
   
 router.put('/update/:id', async (req, res) => {
